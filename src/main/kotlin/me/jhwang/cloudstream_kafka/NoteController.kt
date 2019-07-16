@@ -1,5 +1,6 @@
 package me.jhwang.cloudstream_kafka
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
@@ -10,22 +11,18 @@ import java.util.*
 @EnableAutoConfiguration
 class NoteController {
 
+    @Autowired
+    lateinit var service: NoteService
+
     @GetMapping
-    fun getNotes(): List<Note> {
-        return listOf(
-                Note( UUID.randomUUID().toString(),
-                        "My First note",
-                        "This is a message for the 1st note"),
-                Note( UUID.randomUUID().toString(),
-                        "My Second note",
-                        "This is a message for the 2nd note")
-        )
-    }
+    fun getNotes(): List<Note>  = service.getNotes()
+
     @PostMapping
-    fun insertNode(@RequestBody note: Note): Note {
-        note.id = UUID.randomUUID().toString()
-        return note
-    }
+    fun createNode(@RequestBody note: Note): Note  = service.createNote(note)
 
+    @PutMapping
+    fun updateNode(@RequestBody note: Note): Boolean = service.updateNode(note)
 
+    @DeleteMapping
+    fun deleteNode(id: String): Boolean = service.deleteNote(id)
 }
