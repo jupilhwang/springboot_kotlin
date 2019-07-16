@@ -16,6 +16,7 @@ class NoteService {
 //    fun updateNote(note: Note): Note = repository.save(note)
 
     fun getNotes(): Iterable<NoteDTO> = repository.findAll().map { it -> NoteDTO(it) }
+    fun getNote(id: String): NoteDTO = NoteDTO(repository.findById(id).get())
     fun createNote(noteDto: NoteDTO) = NoteDTO(
             repository.save(
                     Note(
@@ -35,4 +36,5 @@ class NoteService {
         note = repository.save(note)
         return NoteDTO(note)
     }
+    fun getNotesLaterThan(date: Date): Iterable<NoteDTO> = repository.findNoteLaterThan(date.time).map { it-> NoteDTO(it) }
 }

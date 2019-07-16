@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 @RestController
@@ -18,12 +19,18 @@ class NoteController {
     @GetMapping
     fun getNotes(): Iterable<NoteDTO> = service.getNotes()
 
-    @PostMapping
-    fun createNode(@RequestBody note: NoteDTO)  = service.createNote(note)
+    @GetMapping("/{id}")
+    fun getNote(@PathVariable id: String): NoteDTO = service.getNote(id)
 
-    @DeleteMapping ("/{id}")
+    @PostMapping
+    fun createNode(@RequestBody note: NoteDTO) = service.createNote(note)
+
+    @DeleteMapping("/{id}")
     fun deleteNote(@PathVariable id: String) = service.deleteNote(id)
 
     @PutMapping
     fun updateNode(@RequestBody note: NoteDTO) = service.updateNote(note)
+
+    @GetMapping("/search/{date}")
+    fun getNotesLaterThan(@PathVariable date: String): Iterable<NoteDTO> = service.getNotesLaterThan(SimpleDateFormat("YYYYMMdd").parse(date))
 }

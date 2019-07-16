@@ -31,5 +31,7 @@
 ##### DTOs (data transfer objects) 
 
 
+##### Database queries
+- @Query annotations
 
 
