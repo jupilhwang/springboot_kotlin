@@ -8,4 +8,6 @@ interface NoteRepository: CrudRepository<Note, String>  {
 
     @Query("from Note t where t.modified > ?1")
     fun findNoteLaterThan(date: Long): Iterable<Note>
+
+    fun findByTitle(title: String) : Iterable<Note>
 }

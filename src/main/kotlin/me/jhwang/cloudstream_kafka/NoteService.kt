@@ -36,5 +36,6 @@ class NoteService {
         note = repository.save(note)
         return NoteDTO(note)
     }
-    fun getNotesLaterThan(date: Date): Iterable<NoteDTO> = repository.findNoteLaterThan(date.time).map { it-> NoteDTO(it) }
+    fun getNotesLaterThan(date: Date): Iterable<NoteDTO> = repository.findNoteLaterThan(date.time).map { it -> NoteDTO(it) }
+    fun findNotesByTitle(title: String): Iterable<NoteDTO> = repository.findByTitle(title).map { it -> NoteDTO(it) }
 }

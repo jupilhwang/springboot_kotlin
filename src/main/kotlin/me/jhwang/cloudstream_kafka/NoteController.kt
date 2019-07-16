@@ -33,4 +33,7 @@ class NoteController {
 
     @GetMapping("/search/{date}")
     fun getNotesLaterThan(@PathVariable date: String): Iterable<NoteDTO> = service.getNotesLaterThan(SimpleDateFormat("YYYYMMdd").parse(date))
+
+    @GetMapping("/title/{title}")
+    fun findNotesByTitle(@PathVariable title: String): Iterable<NoteDTO> = service.findNotesByTitle(title)
 }
