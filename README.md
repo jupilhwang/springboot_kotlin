@@ -33,5 +33,9 @@
 
 ##### Database queries
 - @Query annotations
+    - "from Note t where t.modified > ?1"
+
+- @NamedQuery
+    - "select * from Note n where n.title like ?1" 
 
 
