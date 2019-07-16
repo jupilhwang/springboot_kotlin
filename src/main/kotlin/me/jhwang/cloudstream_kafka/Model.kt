@@ -1,5 +1,7 @@
 package me.jhwang.cloudstream_kafka
 
+import io.micrometer.core.lang.Nullable
+
 data class Note (
         var id: String = "",
         var title: String = "",
