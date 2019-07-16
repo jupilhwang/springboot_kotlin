@@ -4,7 +4,7 @@
 - AOP
 
 ### Spring Services
-#### Spring Data JPA and MySQL
+### Spring Data JPA and MySQL
 - Spring Data JPA
     - Repository and custom object-mapping abstractions
     - Derivation of dynamic queries from the repository method names
@@ -16,7 +16,7 @@
 - Creating database queries
 
 
-##### Spring Data JPA
+#### Spring Data JPA
 - Support for creating repositories based on Spring and JPA
 - Support for Querydsl (https://www.querydsl.com) predicates
 - Auditing
