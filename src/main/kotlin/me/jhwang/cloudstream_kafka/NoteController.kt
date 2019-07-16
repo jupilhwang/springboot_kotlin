@@ -16,14 +16,14 @@ class NoteController {
     lateinit var service: NoteService
 
     @GetMapping
-    fun getNotes(): Iterable<Note> = service.getNotes()
+    fun getNotes(): Iterable<NoteDTO> = service.getNotes()
 
     @PostMapping
-    fun createNode(@RequestBody note: Note): Note  = service.createNote(note)
+    fun createNode(@RequestBody note: NoteDTO)  = service.createNote(note)
 
     @DeleteMapping ("/{id}")
     fun deleteNote(@PathVariable id: String) = service.deleteNote(id)
 
     @PutMapping
-    fun updateNode(@RequestBody note: Note): Note = service.updateNote(note)
+    fun updateNode(@RequestBody note: NoteDTO) = service.updateNote(note)
 }
