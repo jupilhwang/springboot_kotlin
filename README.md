@@ -28,5 +28,8 @@
 - @EnableJpaRepository annotation to configure JavaConfig-based repositories
 
 
+##### DTOs (data transfer objects) 
+
+
 
 

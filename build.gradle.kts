@@ -36,6 +36,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 //    testImplementation("org.springframework.cloud:spring-cloud-stream-test-support")
 //    testImplementation("org.springframework.kafka:spring-kafka-test")
+
+    implementation("mysql:mysql-connector-java")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 dependencyManagement {
