@@ -19,7 +19,7 @@
 
 #### Spring Data JPA
 - Support for creating repositories based on Spring and JPA
-- Support for Querydsl (https://www.querydsl.com) predicates
+- Support for Querydsl (http://www.querydsl.com) predicates
 - Auditing
 - Pagination support
 - Support for dynamic query execution
