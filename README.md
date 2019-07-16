@@ -1,9 +1,9 @@
-### SpringBoot with Kotlin
+## SpringBoot with Kotlin
 - Dependency Injection
 - IoC
 - AOP
 
-#### Spring Services
+### Spring Services
 #### Spring Data JPA and MySQL
 - Spring Data JPA
     - Repository and custom object-mapping abstractions
